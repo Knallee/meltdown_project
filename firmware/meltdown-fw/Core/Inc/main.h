@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -49,8 +49,6 @@ extern "C" {
 
 /* USER CODE END EM */
 
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -59,8 +57,12 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define OLED_nRST_Pin GPIO_PIN_4
+#define OLED_nRST_GPIO_Port GPIOA
 #define Protection_INT_Pin GPIO_PIN_11
 #define Protection_INT_GPIO_Port GPIOB
+#define OLED_DC_Pin GPIO_PIN_14
+#define OLED_DC_GPIO_Port GPIOB
 #define ENC_BTN_INT_Pin GPIO_PIN_8
 #define ENC_BTN_INT_GPIO_Port GPIOA
 #define ENC_B_INT_Pin GPIO_PIN_12
